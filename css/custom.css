@@ -264,6 +264,7 @@ h6 {
 	line-height: 1.1em;
 	color: var(--primary-color);
 	margin: 0;
+	margin-top:20px;
 }
 
 figure {
@@ -872,6 +873,7 @@ header.main-header .header-sticky.active {
 	width: 100%;
 	height: 100vh;
 	min-height: 700px;
+	position: relative;
 }
 
 .hero-slide {
@@ -881,7 +883,7 @@ header.main-header .header-sticky.active {
 	height: 100%;
 	display: flex;
 	align-items: center;
-	padding: 100px 0;
+	padding: 100px 0 200px;
 }
 
 .hero-slide::before {
@@ -1025,15 +1027,20 @@ header.main-header .header-sticky.active {
 
 
 .hero-info-box {
-	position: relative;
-	margin-top: -125px;
-	z-index: 2;
+	position: absolute;
+	bottom: 60px;
+	left: 0;
+	right: 0;
+	z-index: 10;
 }
 
 .hero-info-list {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 30px;
+	position: relative;
+	z-index: 10;
+	justify-content: flex-start;
 }
 
 .hero-info-item {
@@ -1112,6 +1119,15 @@ header.main-header .header-sticky.active {
 .hero-info-item.box-3 {
 	background: var(--primary-color);
 	padding: 40px;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	max-width: 500px;
+	margin-left: 0;
 }
 
 .hero-info-header {
@@ -1233,7 +1249,8 @@ header.main-header .header-sticky.active {
 
 .hero-info-bg-icon img {
 	width: 100%;
-	max-width: 100px;
+	max-width: 80px;
+	opacity: 0.2;
 }
 
 /************************************/
@@ -1897,7 +1914,7 @@ header.main-header .header-sticky.active {
 
 @media only screen and (max-width: 991px) {
 	.about-us-premium {
-		padding: 80px 0;
+		padding: 0px 0;
 	}
 
 	.about-premium-content {
@@ -3941,7 +3958,8 @@ header.main-header .header-sticky.active {
 /************************************/
 
 .our-blog {
-	padding: 85px 0 60px;
+	padding: 0px 0 60px!important;
+	margin-top:-50px;
 }
 
 .post-item {
@@ -6086,6 +6104,7 @@ header.main-header .header-sticky.active {
 .image-anime {
 	position: relative;
 	overflow: hidden;
+	margin-top: 30px;
 }
 
 .image-anime img {
@@ -7564,8 +7583,26 @@ header.main-header .header-sticky.active {
 		top: 0;
 	}
 
+	header.main-header .header-sticky {
+		background: #f5f3ef;
+		border-bottom: none;
+		box-shadow: none;
+	}
+
 	header.main-header .header-sticky.active {
 		border-radius: 0;
+		background: #f5f3ef;
+		border-bottom: none;
+		box-shadow: none;
+	}
+
+	.hero {
+		margin-top: 0;
+		overflow: visible;
+	}
+
+	.responsive-menu {
+		background: #f5f3ef;
 	}
 
 	.navbar {
@@ -7620,7 +7657,7 @@ header.main-header .header-sticky.active {
 	}
 
 	.hero {
-		padding: 140px 0 150px;
+		padding: 65px 0 150px
 	}
 
 	.year-experience-circle img {
@@ -8338,6 +8375,24 @@ header.main-header .header-sticky.active {
 		font-size: 26px;
 	}
 
+	.hero-slider {
+		height: auto;
+		min-height: 500px;
+	}
+
+	.hero-slide {
+		padding: 100px 0 200px;
+	}
+
+	.hero-info-box {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin-top: 0 !important;
+		z-index: 10;
+	}
+
 	.hero-content-body {
 		gap: 30px;
 	}
@@ -8351,37 +8406,64 @@ header.main-header .header-sticky.active {
 	}
 
 	.hero-info-list {
+		margin-top: 0 !important;
 		gap: 20px;
 	}
 
-	.hero-info-item {
-		width: 100%;
-	}
-
-	.hero-info-item-content h3 {
-		font-size: 18px;
-	}
-
-	.hero-info-header {
-		margin-bottom: 30px;
+	.hero-info-item.box-3 {
+		padding: 20px;
+		margin-top: 0;
 	}
 
 	.hero-info-counter-box h3 {
-		font-size: 18px;
+		font-size: 16px;
+		margin-bottom: 5px;
 	}
 
 	.hero-info-counter-box h2 {
-		font-size: 28px;
-	}
-
-	.hero-info-bg-icon {
-		bottom: -10px;
-		right: -10px;
+		font-size: 24px;
 	}
 
 	.hero-info-bg-icon img {
-		max-width: 60px;
+		max-width: 50px;
 	}
+
+	/* Contact Info Responsive */
+	.contact-info-list li {
+		margin-bottom: 20px;
+		align-items: flex-start;
+	}
+
+	.contact-info-icon {
+		width: 45px;
+		height: 45px;
+		font-size: 16px;
+		margin-right: 15px;
+	}
+
+	.contact-info-content h4 {
+		font-size: 16px;
+		margin-bottom: 2px;
+	}
+
+	.contact-info-content p {
+		font-size: 14px;
+		overflow-wrap: anywhere;
+	}
+
+	@media only screen and (max-width: 480px) {
+		.hero-info-item.box-3 {
+			flex-direction: column;
+			text-align: center;
+			gap: 20px;
+		}
+
+		.hero-info-bg-icon {
+			position: static;
+			margin: 0 auto;
+		}
+	}
+
 
 	.about-us-image-box-1 .about-us-image img {
 		aspect-ratio: 1 / 1.47;
@@ -9923,7 +10005,7 @@ header.main-header.header-gold .header-sticky.active {
 }
 
 .our-projects {
-	padding: 100px 0 70px;
+	padding: 15px 0 70px;
 }
 
 .project-item-gold {
@@ -13764,7 +13846,7 @@ header.main-header.header-silver .header-sticky.active {
 =================================*/
 
 .our-process-section {
-	padding: 100px 0;
+	padding: 15px 0;
 	background-color: #050505;
 	/* Pure Black Background for maximum contrast */
 	position: relative;
@@ -13916,7 +13998,7 @@ header.main-header.header-silver .header-sticky.active {
    - Premium Dark Grid Layout with Author Images
 =================================*/
 .our-review-section {
-	padding: 120px 0;
+	padding: 35px 0;
 	background-color: var(--secondary-color);
 }
 
@@ -14149,6 +14231,8 @@ header.main-header.header-silver .header-sticky.active {
 .footer-links-list li,
 .footer-contact-list li {
 	margin-bottom: 15px;
+	overflow-wrap: anywhere;
+	word-break: break-word;
 }
 
 .footer-links-list li a {
@@ -14165,7 +14249,7 @@ header.main-header.header-silver .header-sticky.active {
 
 .footer-contact-list li {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	color: #ffffff;
 }
 
@@ -14173,6 +14257,7 @@ header.main-header.header-silver .header-sticky.active {
 	width: 25px;
 	color: var(--accent-color);
 	margin-right: 10px;
+	margin-top: 5px;
 }
 
 .footer-divider {
@@ -14214,8 +14299,15 @@ header.main-header.header-silver .header-sticky.active {
 		transform: translateX(-50%);
 	}
 
+	.footer-links-list,
+	.footer-contact-list {
+		display: inline-block;
+		text-align: left;
+	}
+
+	.footer-links-list li,
 	.footer-contact-list li {
-		justify-content: center;
+		justify-content: flex-start;
 	}
 
 	.footer-social-icons {
@@ -14393,7 +14485,7 @@ header.main-header.header-silver .header-sticky.active {
 =================================*/
 
 .about-premium-section {
-	padding: 85px 0;
+	padding: 0px 0;
 	background: #fff;
 	position: relative;
 }
@@ -14560,7 +14652,7 @@ header.main-header.header-silver .header-sticky.active {
 }
 
 .vision-mission-section {
-	padding: 85px 0;
+	padding: 0px 0;
 	background: #f8f9fa;
 	position: relative;
 	overflow: hidden;
@@ -14793,7 +14885,7 @@ header.main-header.header-silver .header-sticky.active {
 .about-premium-section .section-title h3,
 .vision-mission-section .section-title h3,
 .why-choose-us-accordion .section-title h3 {
-	padding: 5px 15px;
+	padding: 31px 15px;
 	background: #fff;
 	border: 1px solid #eee;
 	border-radius: 0;
@@ -14891,7 +14983,7 @@ header.main-header.header-silver .header-sticky.active {
 
 /* Premium Services Page Styles */
 .py-120 {
-	padding: 85px 0;
+	padding: 0px 0;
 }
 
 /* Blueprint Signature Services */
@@ -15919,6 +16011,7 @@ header.main-header.header-silver .header-sticky.active {
 @media (max-width: 767px) {
 	.section-title h2 {
 		font-size: 32px;
+		padding:0px;
 	}
 
 	.section-title h3 {
